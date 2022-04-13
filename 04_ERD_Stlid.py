@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import seaborn as sns
-from pandas_profiling import ProfileReport, profile_report
+from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 
 # webapp ka title 
@@ -14,8 +14,6 @@ st.markdown('''
 # how to upload a file from pc
 with st.sidebar.header(" Upload your Dataset (.csv)"):
     upload_file = st.sidebar.file_uploader("Upload your file", type=['csv'])
-    #delaney_with_descriptors_url = 'https://github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv'
-    #df = sns.load_dataset(delaney_with_descriptors_url)
     df = sns.load_dataset('titanic')
     st.sidebar.markdown("[Example CSV file](https://raw.github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv)")
 
@@ -44,7 +42,7 @@ else:
                                 columns=['age','banana','codanics','pakistan','Ear'])
             return a
         df= load_data()
-        pr= profile_report(df,explorative = True)
+        pr= ProfileReport(df,explorative = True)
         st.header('***input DF***')
         st.write(df)
         st.write('---')
