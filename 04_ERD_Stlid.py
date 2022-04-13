@@ -14,10 +14,10 @@ st.markdown('''
 # how to upload a file from pc
 with st.sidebar.header(" Upload your Dataset (.csv)"):
     upload_file = st.sidebar.file_uploader("Upload your file", type=['csv'])
-    delaney_with_descriptors_url = 'https://github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv'
-    df = sns.load_dataset(delaney_with_descriptors_url)
-    #df = sns.load_dataset('titanic')
-    #st.sidebar.markdown("[Example CSV file])(https://raw.github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csvhttps://github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv)")
+    #delaney_with_descriptors_url = 'https://github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv'
+    #df = sns.load_dataset(delaney_with_descriptors_url)
+    df = sns.load_dataset('titanic')
+    st.sidebar.markdown("[Example CSV file](https://raw.github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv)")
 
 #profilimg report for pandas
 if upload_file is not None:
