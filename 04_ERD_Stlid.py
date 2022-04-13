@@ -13,16 +13,16 @@ st.markdown('''
 
 # how to upload a file from pc
 with st.sidebar.header(" Upload your Dataset (.csv)"):
-    upload_file = st.sidebar.file_uploader("Upload your file", type=['csv'])
+    uploaded_file = st.sidebar.file_uploader("Upload your file", type=['csv'])
     df = sns.load_dataset('titanic')
     st.sidebar.markdown("[Example CSV file](https://raw.github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv)")
 
 #profilimg report for pandas
-if upload_file is not None:
+if uploaded_file is not None:
     @st.cache
 
     def load_csv():
-        csv= pd.read_csv(upload_file)
+        csv= pd.read_csv(uploaded_file)
         return csv
     df= load_csv()
     pr= ProfileReport(df,explorative = True)
