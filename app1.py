@@ -23,7 +23,7 @@ dataset_name = st.sidebar.selectbox(
 )
 
 classifier_name = st.sidebar.selectbox(
-    'Select Classifier'
+    'Select Classifier',
     ('KNN','SVM','Random Forest')
 )
 # ab hum na ak function define karna hai dataset ko load karna ka liya
