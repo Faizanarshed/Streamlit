@@ -74,12 +74,12 @@ def get_classifier(classifier_name,params):
         max_depth=params['max_depth'],random_state=1234)
     return clf
         
-clf = get_classifier(classifier_name,params)
+clf = get_classifier(classifier_name, params)
 
 #
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=1234)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 
-clf.fit(X_train,y_train)
+clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
 # model accuracy Score for print
