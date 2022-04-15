@@ -1,5 +1,5 @@
-from ast import Param
-from enum import unique
+#from ast import Param
+#from enum import unique
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -68,7 +68,7 @@ def get_classifier(classifier_name,params):
     if classifier_name == 'SVM':
         clf = SVC(C=params['C'])
     elif classifier_name == 'KNN':
-        clf = KNeighborsClassifier(n_neighbors=['K'])
+        clf = KNeighborsClassifier(n_neighbors=params['K'])
     else:
         clf = clf = RandomForestClassifier(n_estimators=params['n_estimators'],
         max_depth=params['max_depth'],random_state=1234)
